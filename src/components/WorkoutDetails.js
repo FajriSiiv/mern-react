@@ -3,9 +3,12 @@ import formatDistanceToNow from "date-fns/formatDistanceToNow";
 const WorkoutDetails = ({ workout }) => {
   const { dispatch } = useWorkoutContext();
   const handleDelete = async () => {
-    const res = await fetch("/api/workouts/" + workout._id, {
-      method: "DELETE",
-    });
+    const res = await fetch(
+      "https://node-mern-1.herokuapp.com/api/workouts/" + workout._id,
+      {
+        method: "DELETE",
+      }
+    );
     const json = await res.json();
 
     if (res.ok) {
