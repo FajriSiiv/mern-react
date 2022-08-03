@@ -12,9 +12,9 @@ const WorkoutForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const url = process.env.REACT_APP_API;
     const workout = { title, load, reps };
-
-    const res = await fetch("https://node-mern-1.herokuapp.com/api/workouts", {
+    const res = await fetch(`${url}`, {
       method: "POST",
       body: JSON.stringify(workout),
       headers: {
@@ -40,34 +40,42 @@ const WorkoutForm = () => {
   };
 
   return (
-    <form className="create" onSubmit={handleSubmit}>
-      <h3>Add a New Workout</h3>
-      <label>Title : </label>
+    <form
+      className="w-[90vw] sm:w-[70vw] flex justify-center items-center flex-col mx-auto lg:w-[25vw]"
+      onSubmit={handleSubmit}
+    >
+      <h3 className="font-bold text-xl sm:text-3xl mb-10">Adding your team</h3>
+      <label>Name : </label>
       <input
         type="text"
-        name="title"
+        name="Name"
         onChange={(e) => setTitle(e.target.value)}
         value={title}
-        className={emptyFields.includes("title") ? "error" : ""}
+        className={emptyFields.includes("Name") ? "error" : ""}
+        placeholder="Name Team.."
       />
-      <label>Load (kg) : </label>
+      <label>Game Division : </label>
       <input
         type="text"
         name="load"
         onChange={(e) => setLoad(e.target.value)}
         value={load}
         className={emptyFields.includes("load") ? "error" : ""}
+        placeholder="Game Division.."
       />
-      <label>Reps : </label>
+      <label>Members : </label>
       <input
         type="text"
         name="reps"
         onChange={(e) => setReps(e.target.value)}
         value={reps}
         className={emptyFields.includes("reps") ? "error" : ""}
+        placeholder="Members.."
       />
 
-      <button>Add Workout</button>
+      <button className="hover:bg-green-600 hover:text-slate-100 transition-all">
+        Add Team
+      </button>
       {error && <div className="error">{error}</div>}
     </form>
   );
