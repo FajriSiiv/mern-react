@@ -55,12 +55,12 @@ const WorkoutForm = () => {
       />
       <label>Game Division : </label>
       <input
-        type="text"
+        type="number"
         name="load"
         onChange={(e) => setLoad(e.target.value)}
         value={load}
         className={emptyFields.includes("load") ? "error" : ""}
-        placeholder="Game Division.."
+        placeholder="Years"
       />
       <label>Members : </label>
       <input

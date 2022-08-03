@@ -21,7 +21,7 @@ const WorkoutDetails = ({ workout }) => {
     <div className="workout-details sm:w-[70vw] lg:w-auto">
       <h4>{workout.title}</h4>
       <p>
-        <strong>Game Division : </strong> {workout.load}
+        <strong>Years : </strong> {workout.load}
       </p>
       <p>
         <strong>Members : </strong> {workout.reps}
