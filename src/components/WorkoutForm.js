@@ -8,11 +8,11 @@ const WorkoutForm = () => {
   const [reps, setReps] = useState("");
   const [error, setError] = useState(null);
   const [emptyFields, setEmptyFields] = useState([]);
+  const url = process.env.REACT_APP_API;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const url = process.env.REACT_APP_API;
     const workout = { title, load, reps };
     const res = await fetch(`${url}`, {
       method: "POST",

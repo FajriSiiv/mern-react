@@ -2,9 +2,9 @@ import { useWorkoutContext } from "../hooks/useContexthook";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 const WorkoutDetails = ({ workout }) => {
   const { dispatch } = useWorkoutContext();
+  const url = process.env.REACT_APP_API_2;
 
   const handleDelete = async () => {
-    const url = process.env.REACT_APP_API_2;
     const res = await fetch(`${url}` + workout._id, {
       method: "DELETE",
     });

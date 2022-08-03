@@ -5,9 +5,9 @@ import { useWorkoutContext } from "../hooks/useContexthook";
 
 const Home = () => {
   const { workouts, dispatch } = useWorkoutContext();
+  const url = process.env.REACT_APP_API;
   useEffect(() => {
     const fecthWorkouts = async () => {
-      const url = process.env.REACT_APP_API;
       const res = await fetch(url);
       const json = await res.json();
 
