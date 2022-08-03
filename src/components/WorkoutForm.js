@@ -8,13 +8,12 @@ const WorkoutForm = () => {
   const [reps, setReps] = useState("");
   const [error, setError] = useState(null);
   const [emptyFields, setEmptyFields] = useState([]);
-  const url = process.env.REACT_APP_API;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const workout = { title, load, reps };
-    const res = await fetch(`${url}`, {
+    const res = await fetch("https://node-mern-1.herokuapp.com/api/workouts", {
       method: "POST",
       body: JSON.stringify(workout),
       headers: {
@@ -51,7 +50,7 @@ const WorkoutForm = () => {
         name="Name"
         onChange={(e) => setTitle(e.target.value)}
         value={title}
-        className={emptyFields.includes("Name") ? "error" : ""}
+        className={emptyFields.includes("title") ? "error" : ""}
         placeholder="Name Team.."
       />
       <label>Game Division : </label>
