@@ -5,7 +5,7 @@ const WorkoutDetails = ({ workout }) => {
 
   const handleDelete = async () => {
     const res = await fetch(
-      "https://node-mern-1.herokuapp.com/api/workouts/" + workout._id,
+      "http://localhost:4000/api/workouts/" + workout._id,
       {
         method: "DELETE",
       }
@@ -21,10 +21,10 @@ const WorkoutDetails = ({ workout }) => {
     <div className="workout-details sm:w-[70vw] lg:w-auto">
       <h4>{workout.title}</h4>
       <p>
-        <strong>Years : </strong> {workout.load}
+        <strong>Game Division : </strong> {workout.load}
       </p>
       <p>
-        <strong>Members : </strong> {workout.reps}
+        <strong>Leaders : </strong> {workout.reps}
       </p>
       <p>
         Create :{" "}

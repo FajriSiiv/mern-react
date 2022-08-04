@@ -13,7 +13,7 @@ const WorkoutForm = () => {
     e.preventDefault();
 
     const workout = { title, load, reps };
-    const res = await fetch("https://node-mern-1.herokuapp.com/api/workouts", {
+    const res = await fetch("http://localhost:4000/api/workouts", {
       method: "POST",
       body: JSON.stringify(workout),
       headers: {
@@ -44,7 +44,7 @@ const WorkoutForm = () => {
       onSubmit={handleSubmit}
     >
       <h3 className="font-bold text-xl sm:text-3xl mb-10">Adding your team</h3>
-      <label>Name : </label>
+      <label>Name Team : </label>
       <input
         type="text"
         name="Name"
@@ -55,12 +55,12 @@ const WorkoutForm = () => {
       />
       <label>Game Division : </label>
       <input
-        type="number"
+        type="text"
         name="load"
         onChange={(e) => setLoad(e.target.value)}
         value={load}
         className={emptyFields.includes("load") ? "error" : ""}
-        placeholder="Years"
+        placeholder="Game Division.."
       />
       <label>Members : </label>
       <input
@@ -69,7 +69,7 @@ const WorkoutForm = () => {
         onChange={(e) => setReps(e.target.value)}
         value={reps}
         className={emptyFields.includes("reps") ? "error" : ""}
-        placeholder="Members.."
+        placeholder="Leaders.."
       />
 
       <button className="hover:bg-green-600 hover:text-slate-100 transition-all">
