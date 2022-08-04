@@ -62,7 +62,7 @@ const WorkoutForm = () => {
         className={emptyFields.includes("load") ? "error" : ""}
         placeholder="Game Division.."
       />
-      <label>Members : </label>
+      <label>Leaders : </label>
       <input
         type="text"
         name="reps"
