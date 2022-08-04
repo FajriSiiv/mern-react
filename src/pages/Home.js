@@ -7,7 +7,7 @@ const Home = () => {
   const { workouts, dispatch } = useWorkoutContext();
   useEffect(() => {
     const fecthWorkouts = async () => {
-      const res = await fetch("http://localhost:4000/api/workouts");
+      const res = await fetch("https://node-mern-1.herokuapp.com/api/workouts");
       const json = await res.json();
 
       if (res.ok) {

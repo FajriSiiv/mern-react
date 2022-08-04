@@ -5,7 +5,7 @@ const WorkoutDetails = ({ workout }) => {
 
   const handleDelete = async () => {
     const res = await fetch(
-      "http://localhost:4000/api/workouts/" + workout._id,
+      "https://node-mern-1.herokuapp.com/api/workouts/" + workout._id,
       {
         method: "DELETE",
       }
